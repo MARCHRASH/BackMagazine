@@ -11,4 +11,5 @@ import com.magazine.model.Order;
 public interface OrderRepository extends PagingAndSortingRepository<Order, Long> {
 	Page<Order> findByUserid(int userid, Pageable pageable);
 	Order findByProductid(int productid);
+	Order findByProductidAndUserid(int productid, int userid);
 }

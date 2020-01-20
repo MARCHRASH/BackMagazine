@@ -131,8 +131,8 @@ public class OrderController {
 	public List<BasketProduct> confirmedOrder(@RequestBody BasketProduct basketProduct){
 		for(int i = 0;i<basket.size();i++) {
 			if(basketProduct.getId()==basket.get(i).getId()) {
-				Order order = repository.findByProductid((int)basketProduct.getId());
-				if(order!=null&&order.getUserid()==user.getId()){
+				Order order = repository.findByProductidAndUserid((int)basketProduct.getId(), user.getId());
+				if(order!=null){
 					System.out.println("I take : "+order);
 					int counter = order.getCounter() + basketProduct.getCounter();
 					order.setCounter(counter);
