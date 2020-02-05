@@ -47,7 +47,6 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
 		} catch (Exception e) {
 			logger.error("Невозможно произвести аутентификацию пользователя : " + e);
 		}
-
 		filterChain.doFilter(request, response);
 	}
 
